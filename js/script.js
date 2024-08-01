@@ -8,15 +8,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Example function to toggle dark mode
-document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+// Dark Mode Toggle
+document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-// Example function to dynamically update content
+// Dynamic Content Update
 const updateContent = () => {
     const currentDate = new Date();
-    document.getElementById('date-display').innerText = `Current Date: ${currentDate.toDateString()}`;
+    const dateDisplay = document.getElementById('date-display');
+    if (dateDisplay) {
+        dateDisplay.innerText = `Current Date: ${currentDate.toDateString()}`;
+    }
 };
 
 // Call updateContent on page load
@@ -24,7 +27,7 @@ window.onload = () => {
     updateContent();
 };
 
-// Example animation on scroll
+// Animation on Scroll
 const animateOnScroll = () => {
     const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach(element => {

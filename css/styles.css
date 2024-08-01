@@ -1,12 +1,58 @@
+/* General Styles */
 body {
-    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
 }
+
 header {
-    background-color: #343a40;
-    color: #ffffff;
+    background-color: #007bff;
+    color: white;
     padding: 20px;
+    border-radius: 8px;
 }
-img {
-    max-width: 100%;
-    height: auto;
+
+h1, h3 {
+    margin: 0;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+/* Animations */
+.animated {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
