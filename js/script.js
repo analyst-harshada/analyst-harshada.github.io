@@ -1,33 +1,40 @@
-// JavaScript for smooth scrolling
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
-// JavaScript for form validation feedback
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    const feedbackDiv = document.getElementById('form-feedback');
-
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            if (name && email && message) {
-                feedbackDiv.innerHTML = `<p class="text-success">Thank you for your message, ${name}!</p>`;
-                form.reset();
-            } else {
-                feedbackDiv.innerHTML = `<p class="text-danger">Please fill out all fields.</p>`;
-            }
-        });
-    }
+// Example function to toggle dark mode
+document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
 });
+
+// Example function to dynamically update content
+const updateContent = () => {
+    const currentDate = new Date();
+    document.getElementById('date-display').innerText = `Current Date: ${currentDate.toDateString()}`;
+};
+
+// Call updateContent on page load
+window.onload = () => {
+    updateContent();
+};
+
+// Example animation on scroll
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            element.classList.add('animated');
+        } else {
+            element.classList.remove('animated');
+        }
+    });
+};
+
+window.addEventListener('scroll', animateOnScroll);
