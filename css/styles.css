@@ -1,0 +1,13 @@
+/* Custom Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #007bff;
+}
+
+footer {
+    background-color: #343a40;
+}
